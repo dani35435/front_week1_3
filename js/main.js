@@ -279,29 +279,29 @@ Vue.component('card', {
 <div :key="idCard" :class="{in_time: card.inTime, not_in_time: card.inTime == false}" draggable="true" :data-id="idCard" :data-column="idColumn">
         <div class="in-card">
             <h2 class="card_title">{{card.title}}</h2>
-            <button v-if="idColumn === 0" @click="delCard(idCard, idColumn)">delete</button>
-            <button v-if="idColumn !== 3" @click="editCard(idCard, idColumn)">edit</button>
+            <button v-if="idColumn === 0" @click="delCard(idCard, idColumn)">Удаление</button>
+            <button v-if="idColumn !== 3" @click="editCard(idCard, idColumn)">Изменить</button>
         </div>
         <div class="in-card"> 
             <p>description:</p>
             <p>{{card.description}}</p> 
         </div>
         <div class="in-card">
-            <p>created:</p>
+            <p>Создать</p>
             <p class="card_time">{{card.time}}</p>
             <p class="card_date">{{card.date}}</p>
         </div>
         <div v-if="card.editTime" class="in-card">
-            <p>edit:</p>
+            <p>редактировать:</p>
             <p class="card_edit_time">{{card.editTime}}</p>
             <p class="card_edit_data">{{card.editDate}}</p>
         </div>
         <div v-if="card.reason" class="in-card">
-            <p>reason:</p>
+            <p>причина:</p>
             <p class="card_reason">{{card.reason}}</p>
         </div>
         <div class="in-card">
-            <p>deadline:</p>
+            <p>Время</p>
             <p class="card_deadline_time">{{card.deadlineTime}}</p>
             <p class="card_deadline_data">{{card.deadlineDate}}</p>
         </div>
@@ -335,11 +335,11 @@ Vue.component('reason', {
 <form class="reason-form" @submit.prevent="onSubmit">
     <h2>Reason</h2>
     <p>
-        <label for="reason">Reason:</label>
-        <input id="reason" v-model="reason" placeholder="reason">
+        <label for="reason">Причина</label>
+        <input id="reason" v-model="reason" placeholder="Причина">
     </p>
     <p>
-        <input type="submit" value="Save"> 
+        <input type="submit" value="Сохранить"> 
     </p>
 </form>
     `
@@ -386,23 +386,23 @@ Vue.component('edit', {
 <form class="edit-form" @submit.prevent="onSubmit">
     <h2>Edit</h2>
     <p>
-        <label for="title-edit">Title edit:</label>
-        <input id="title-edit" v-model="title" placeholder="title-edit">
+        <label for="title-edit">Изменение названия:</label>
+        <input id="title-edit" v-model="title" placeholder="Изменение названия">
     </p>
     <p>
-        <label for="description-edit">Description edit:</label>
+        <label for="description-edit">Изменение Описания:</label>
         <input id="description-edit" v-model="description" placeholder="description-edit">
     </p>
     <p>
-        <label for="time-edit">Time edit:</label>
+        <label for="time-edit">Изменение время</label>
         <input id="time-edit" type="time" v-model="deadlineTime" placeholder="time-edit">
     </p>
     <p>
-        <label for="date-edit">Date edit:</label>
+        <label for="date-edit">Изменение даты</label>
         <input id="date-edit" type="date" v-model="deadlineDate" placeholder="date-edit">
     </p>
     <p>
-        <input type="submit" value="Save"> 
+        <input type="submit" value="Сохранить"> 
     </p>
 </form>
     `
@@ -447,23 +447,23 @@ Vue.component('create-card', {
     template: `
 <form class="created-form" @submit.prevent="onSubmit">
     <p>
-        <label for="title">Title:</label>
-        <input id="title" v-model="title" placeholder="title">
+        <label for="title">Название</label>
+        <input id="title" v-model="title" placeholder="Название">
     </p>
     <p>
-        <label for="description">Description:</label>
-        <input id="description" v-model="description" placeholder="description">
+        <label for="description">Описание:</label>
+        <input id="description" v-model="description" placeholder="Описание">
     </p>
     <p>
-        <label for="time">Time:</label>
-        <input id="time" type="time" v-model="deadlineTime" placeholder="time">
+        <label for="time">Время:</label>
+        <input id="time" type="time" v-model="deadlineTime" placeholder="Время">
     </p>
     <p>
-        <label for="date">Date:</label>
-        <input id="date" type="date" v-model="deadlineDate" placeholder="date">
+        <label for="date">Дата:</label>
+        <input id="date" type="date" v-model="deadlineDate" placeholder="Дата">
     </p>
     <p>
-        <input type="submit" value="Submit"> 
+        <input class="btn" type="submit" value="Отправить"> 
     </p>
 </form>
     `

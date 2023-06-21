@@ -20,32 +20,27 @@
     border-radius: 20px;
     min-width: 230px;
     min-height: 300px;
-
 }
-
-/*.planned {*/
-/*    order: 1;*/
-/*}*/
-
-/*.working {*/
-/*    order: 2;*/
-/*}*/
-
-/*.testing {*/
-/*    order: 3;*/
-/*}*/
-
-/*.completed {*/
-/*    order: 4;*/
-/*}*/
 
 .edit-form{
     margin: 200px;
 }
 
 .created-form{
-    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: navajowhite;
+    margin-left: 800px;
     margin-top: 20px;
+    width: 300px;
+}
+
+.btn{
+    border: 0;
+    background-color: orange;
+    padding: 10px;
 }
 
 .created-form > p{
@@ -57,15 +52,14 @@
 }
 
 .card{
+    background-color: navajowhite;
     min-width: 200px;
     margin-bottom: 10px;
     cursor: move;
     padding: 20px;
-    border: 3px solid blueviolet;
 }
 
 .card > div{
-    border: 1px solid blueviolet;
     padding: 5px;
 }
 
@@ -77,29 +71,11 @@
     margin-top: 20px;
 }
 
-.in_time {
-    border: 3px solid green;
-}
-
-.in_time > div{
-    border: 1px solid green;
-}
-
-.not_in_time {
-    border: 3px solid red;
-}
-
-.not_in_time > div{
-    border: 1px solid red;
-}
-
 .move{
     display: flex;
     justify-content: space-between;
 }
 
-.drop {
-    background: linear-gradient(#eee, transparent);
-}
+
 
 
