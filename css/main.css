@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: start;
+    justify-content: space-evenly;
+    padding-top: 40px;
+}
+
+.container > div {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: black 4px solid;
+    border-radius: 20px;
+    min-width: 230px;
+    min-height: 300px;
+
+}
+
+/*.planned {*/
+/*    order: 1;*/
+/*}*/
+
+/*.working {*/
+/*    order: 2;*/
+/*}*/
+
+/*.testing {*/
+/*    order: 3;*/
+/*}*/
+
+/*.completed {*/
+/*    order: 4;*/
+/*}*/
+
+.edit-form{
+    margin: 200px;
+}
+
+.created-form{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.created-form > p{
+    margin-top: 10px;
+}
+
+.edit-form > p{
+    margin-top: 20px;
+}
+
+.card{
+    min-width: 200px;
+    margin-bottom: 10px;
+    cursor: move;
+    padding: 20px;
+    border: 3px solid blueviolet;
+}
+
+.card > div{
+    border: 1px solid blueviolet;
+    padding: 5px;
+}
+
+.reason-form {
+    margin: 200px;
+}
+
+.reason-form > p{
+    margin-top: 20px;
+}
+
+.in_time {
+    border: 3px solid green;
+}
+
+.in_time > div{
+    border: 1px solid green;
+}
+
+.not_in_time {
+    border: 3px solid red;
+}
+
+.not_in_time > div{
+    border: 1px solid red;
+}
+
+.move{
+    display: flex;
+    justify-content: space-between;
+}
+
+.drop {
+    background: linear-gradient(#eee, transparent);
+}
+
+
