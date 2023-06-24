@@ -39,18 +39,14 @@ Vue.component('container', {
             this.save();
         })
 
-        eventBus.$on('up-column', (idCard) => {
-            this.columns.splice(idCard, 1)
-            this.
-            console.log(id);
+        eventBus.$on('up-column', (idCard, idColumn) => {
+            Vue.set(this.columns[0], 0, idCard);
+            this.columns[0].push(this.columns[idColumn][idCard]);
             this.save();
         })
 
         eventBus.$on('down-column', (idCard,) => {
             // this.columns[idCard - 1][idCard];
-            console.log(card);
-            console.log(idColumn);
-            console.log(idCard);
             this.save();
         })
 
