@@ -38,6 +38,22 @@ Vue.component('container', {
             this.columns[idColumn].splice(idCard, 1);
             this.save();
         })
+
+        eventBus.$on('up-column', (idCard) => {
+            this.columns.splice(idCard, 1)
+            this.
+            console.log(id);
+            this.save();
+        })
+
+        eventBus.$on('down-column', (idCard,) => {
+            // this.columns[idCard - 1][idCard];
+            console.log(card);
+            console.log(idColumn);
+            console.log(idCard);
+            this.save();
+        })
+
         eventBus.$on('edit-card', (idCard, idColumn) => {
             this.isEdit = true;
             eventBus.$on('edit-submitted', editCard => {
@@ -109,7 +125,7 @@ Vue.component('container', {
         },
         previousColumn(idCard, idColumn) {
             eventBus.$emit('previous-column', idCard, idColumn)
-        },
+        }
     }
 })
 
@@ -273,17 +289,29 @@ Vue.component('card', {
         },
         nextColumnLast(idCard, idColumn) {
             eventBus.$emit('next-column-last', idCard, idColumn)
-        }
+        },
+        upColumn(id) {
+            eventBus.$emit('up-column', id)
+        },
+        downColumn(idCard) {
+            eventBus.$emit('down-column', idCard)
+        },
     },
     template: `
 <div :key="idCard" :class="{in_time: card.inTime, not_in_time: card.inTime == false}" draggable="true" :data-id="idCard" :data-column="idColumn">
+
+        <div>
+            <button @click="upColumn(idCard)">вверх</button>
+            <button @click="downColumn(idCard)">вниз</button>
+        </div>
+
         <div class="in-card">
             <h2 class="card_title">{{card.title}}</h2>
             <button v-if="idColumn === 0" @click="delCard(idCard, idColumn)">Удаление</button>
             <button v-if="idColumn !== 3" @click="editCard(idCard, idColumn)">Изменить</button>
         </div>
         <div class="in-card"> 
-            <p>description:</p>
+            <p>Описание:</p>
             <p>{{card.description}}</p> 
         </div>
         <div class="in-card">
@@ -418,8 +446,6 @@ Vue.component('create-card', {
             description: null,
             deadlineTime: null,
             deadlineDate: null,
-
-
         }
     },
     methods: {
